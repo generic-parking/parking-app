@@ -1,6 +1,9 @@
 'use strict';
-angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', '$uibModal', 'md5',
-    function ($scope, Owner, $uibModal, md5) {
+angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', 'CEP', '$uibModal', 'md5',
+    function ($scope, Owner, CEP, $uibModal, md5) {
+
+        $scope.disableCidade = true;
+        $scope.disableBairro = true;
 
         $scope.floors = [
             { id: 1, description: '1°' },
@@ -29,6 +32,26 @@ angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', '
                 fail('Houve um problema ao atualizar o perfil: ' + failData.data.message);
             });
         };
+
+        $scope.buscarEndereco = function () {
+            CEP.get({cep: $scope.owner.cep}, function (response) {
+                if (response.resultado != 0) {
+                    $scope.owner.cidade = response.cidade;
+                    $scope.disableCidade = true;
+                    if (response.bairro) {
+                        $scope.owner.bairro = response.bairro;
+                        $scope.disableBairro = true;
+                    } else {
+                        $scope.owner.bairro = "";
+                        $scope.disableBairro = false;
+                    }
+                }
+            }, function (fail) {
+                console.log('Busca do CEP falhou: ' + fail);
+                $scope.disableCidade = false;
+                $scope.disableBairro = false;
+                });
+        }
 
         $scope.openModalGravatar = function () {
             var modalInstance = $uibModal.open({
