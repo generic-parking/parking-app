@@ -1,33 +1,27 @@
-### Application
-[![Build Status](https://travis-ci.org/AlexandreSNeto/parking-app.svg?branch=master)](https://travis-ci.org/AlexandreSNeto/parking-app)
-[![App version](https://badge.fury.io/gh/AlexandreSNeto%2Fparking-app.svg)](https://badge.fury.io/gh/AlexandreSNeto%2Fparking-app)
-### Docker Image 
-[![Docker Pulls](https://img.shields.io/docker/pulls/alexandresneto/parking-app.svg?maxAge=2592000)](https://hub.docker.com/r/alexandresneto/parking-app/)
-[![Size and Layers](https://images.microbadger.com/badges/image/alexandresneto/parking-app.svg)](https://microbadger.com/images/alexandresneto/parking-app)
-[![Docker Image Latest Version](https://images.microbadger.com/badges/version/alexandresneto/parking-app.svg)](http://microbadger.com/images/alexandresneto/parking-app)
+# ParkingApp
 
----
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
 
-## Parking APP 
+## Development server
 
-Aplicação que consome a [parking-api](https://github.com/gustajz/parking-api).
-Seu propósito é proporcionar o auto gerenciamento de um estacionamento corporativo.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-**ATENÇÃO**: É necessário uma versão do [parking-api](https://github.com/gustajz/parking-api) em execução para que esta aplicação seja executada.
+## Code scaffolding
 
-## Ambiente Desenvolvimento
-O gulp é reponsável por monitorar alterações no código fonte e atualizar a pasta `dist`, que está mapeada no container do nginx. Dessa forma, qualquer alteração em código será refletida na pasta `dist` e consequentemente na pasta `html` do nginx.
-### Instalar dependências
-    $ npm install
-### Habilitar o gulp watch
-    $ gulp
-### Executar container 
-    $ docker run -d --name parking-app -v path/to/parking-app/nginx:/etc/nginx/conf.d/ -v path/to/parking-app/dist:/usr/share/nginx/html --add-host="api:CHANGE_TO_API_HOST" -p 8080:80 nginx
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Ambiente Produção
-Seguir os passos para executar a [parking-api](https://github.com/gustajz/parking-api).
-Executar um container do parking-app.
+## Build
 
-### Criar um container
-    $ docker run --name parking-app -d --add-host="api:CHANGE_TO_API_HOST" -p 8080:80 alexandresneto/parking-app
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
