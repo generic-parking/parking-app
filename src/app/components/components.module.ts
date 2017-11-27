@@ -3,11 +3,17 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+const allComponents = [
+  HeaderComponent
+]
+
 @NgModule({
   imports: [
     CommonModule,
     NgbModule
   ],
-  declarations: [HeaderComponent]
+  exports: allComponents,
+  declarations: allComponents
 })
 export class ComponentsModule { }

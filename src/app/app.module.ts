@@ -1,3 +1,4 @@
+import { ComponentsModule } from './components/components.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     HttpModule,
     BrowserModule,
-    NgReduxModule
+    NgReduxModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
