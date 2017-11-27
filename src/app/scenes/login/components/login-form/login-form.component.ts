@@ -9,20 +9,19 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginFormComponent {
 
-  login:Login = new Login();
   formLogin: FormGroup;
+  @Output() doLoginEvent: EventEmitter<Login> = new EventEmitter<Login>();
 
-  @Output() public doLoginEvent:EventEmitter<Login> = new EventEmitter<Login>();
-
-  constructor(private formBuilder:FormBuilder) {
-    this.formLogin =  formBuilder.group({
+  constructor(private formBuilder: FormBuilder) {
+    this.formLogin = formBuilder.group({
       'username': [null, Validators.required],
       'password': [null, Validators.required],
     })
   }
 
-  doLogin(form) {
-    console.log(form);
-    // this.doLoginEvent.emit(this.login);
+  doLogin(login) {
+    if (this.formLogin.valid) {
+      this.doLoginEvent.emit(login);
+    }
   }
 }

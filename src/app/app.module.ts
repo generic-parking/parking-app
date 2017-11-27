@@ -6,6 +6,7 @@ import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ServicesModule } from './services/services.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgReduxModule,
     NgbModule.forRoot(),
   ],
-  providers: [],
+  providers: [ServicesModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
 <div>
-    <img src="/assets/logo_parking_lg.png">
-    <form action="">
-      <input type="text" [(ngModel)]="login.username" placeholder="Usuário">
-      <input type="text" [(ngModel)]="login.password" placeholder="Senha">
-      <button class="btn btn-warning" type="submit" (onClick)="doLogin()">Entrar</button>
-    </form>
-  </div>
+  <img src="/assets/logo_parking_lg.png">
+  <form [formGroup]="formLogin" (ngSubmit)="doLogin(formLogin.value)">
+    <input type="text" formControlName="username" placeholder="Usuário">
+    <input type="text" formControlName="password" placeholder="Senha">
+    <button class="btn btn-warning" type="submit">Entrar</button>
+  </form>
+</div>
