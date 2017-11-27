@@ -1,6 +1,5 @@
 ### Application
-[![Build Status](https://travis-ci.org/AlexandreSNeto/parking-app.svg?branch=master)](https://travis-ci.org/AlexandreSNeto/parking-app)
-[![App version](https://badge.fury.io/gh/AlexandreSNeto%2Fparking-app.svg)](https://badge.fury.io/gh/AlexandreSNeto%2Fparking-app)
+[![Build Status](https://travis-ci.org/generic-parking/parking-app.svg?branch=master)](https://travis-ci.org/generic-parking/parking-app)
 ### Docker Image 
 [![Docker Pulls](https://img.shields.io/docker/pulls/alexandresneto/parking-app.svg?maxAge=2592000)](https://hub.docker.com/r/alexandresneto/parking-app/)
 [![Size and Layers](https://images.microbadger.com/badges/image/alexandresneto/parking-app.svg)](https://microbadger.com/images/alexandresneto/parking-app)
