@@ -22,7 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     NgReduxModule,
     ComponentsModule,
-    AboutModule
+    AboutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

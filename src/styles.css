@@ -50,16 +50,15 @@ html{
 
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
+
 html, body {
   width: 100%;
   height: 100%;
 }
 
-.btn-primary {
-  background-color: #fbb041;
-  border-color: #faa628;
-}
-.btn-primary:hover {
-  background-color: #fa9b0f;
-  border-color: #e18805
-}
+.btn-primary{color:#fff;background-color:#fbb041;border-color:#faa628}
+.btn-primary.focus,.btn-primary:focus{color:#fff;background-color:#fa9b0f;border-color:#a06103}
+.btn-primary.active,.btn-primary:active,.btn-primary:hover,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#fa9b0f;border-color:#e18805}
+.btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle.btn-primary.focus,.open>.dropdown-toggle.btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{color:#fff;background-color:#e18805;border-color:#a06103}
+.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#fbb041;border-color:#faa628}
+.btn-primary .badge{color:#fbb041;background-color:#fff}

@@ -8,11 +8,16 @@
 
     img {
       max-width: 300px;
+      margin-bottom: 5px;
     }
 
     form {
       display: flex;
       flex-direction: column;
+
+      input {
+        margin: 2px 0px;
+      }
 
       button {
         margin-top: 10px;
