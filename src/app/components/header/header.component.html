@@ -1,26 +1,42 @@
 
-
-
 <nav class="nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/vehicle']">
+      <img src="assets/images/logo_parking.png">
+    </a>
+  </nav>
+  
   <li class="nav-item dropdown">
     
     <div ngbDropdown class="d-inline-block">
         <a class="nav-link dropdown-toggle" 
             href="javascript:void(0);"
             id="dropdownVehicles" 
-            ngbDropdownToggle>Veículos</a>
-                
+            ngbDropdownToggle>
+            Veículos
+            <i class="fa fa-car"></i>
+        </a>
+          
         <div ngbDropdownMenu aria-labelledby="dropdownVehicles">
-          <a class="dropdown-item" href="/vehicle" >Procurar Veículos</a>
-          <a class="dropdown-item" href="/vehicle/register">Meus Veículos</a>
+          <a class="dropdown-item" [routerLink]="['/vehicle']">
+            <i class="fa fa-search"></i>
+            Procurar Veículos
+          </a>
+          <a class="dropdown-item" [routerLink]="['/vehicle/register']">Meus Veículos</a>
         </div>
       </div>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="/profile">Meu Perfil</a>
+    <a class="nav-link" [routerLink]="['/profile']">
+      <i class="fa fa-user"></i>
+      Meu Perfil
+    </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/about">Sobre</a>
+    <a class="nav-link" [routerLink]="['/about']">
+      <i class="fa fa-question"></i>
+      Sobre
+    </a>
   </li>
 </nav>

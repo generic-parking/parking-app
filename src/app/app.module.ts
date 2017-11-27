@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { AboutModule } from './scenes/about/about.module';
 import { ComponentsModule } from './components/components.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     NgReduxModule,
     ComponentsModule,
-    AboutModule
+    AboutModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
