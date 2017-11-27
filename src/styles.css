@@ -48,7 +48,18 @@ html{
   box-sizing: inherit;
 }
 
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
 html, body {
   width: 100%;
   height: 100%;
+}
+
+.btn-primary {
+  background-color: #fbb041;
+  border-color: #faa628;
+}
+.btn-primary:hover {
+  background-color: #fa9b0f;
+  border-color: #e18805
 }
