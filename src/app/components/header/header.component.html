@@ -3,12 +3,20 @@
 
 <nav class="nav">
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Veículos</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="/vehicle">Procurar Veículo</a>
-      <a class="dropdown-item" href="/vehicle/register">Meus Veículos</a>
-    </div>
+    
+    <div ngbDropdown class="d-inline-block">
+        <a class="nav-link dropdown-toggle" 
+            href="javascript:void(0);"
+            id="dropdownVehicles" 
+            ngbDropdownToggle>Veículos</a>
+                
+        <div ngbDropdownMenu aria-labelledby="dropdownVehicles">
+          <a class="dropdown-item" href="/vehicle" >Procurar Veículos</a>
+          <a class="dropdown-item" href="/vehicle/register">Meus Veículos</a>
+        </div>
+      </div>
   </li>
+
   <li class="nav-item">
     <a class="nav-link" href="/profile">Meu Perfil</a>
   </li>
