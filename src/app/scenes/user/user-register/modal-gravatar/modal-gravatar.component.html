@@ -1,0 +1,26 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">O que é o Gravatar ?</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>
+      Gravatar é um serviço que permite a utilização de fotos de perfil em diversas aplicações.
+      Nós possuímos suporte ao gravatar. Ao acessar pela primeira vez, o sistema cria uma Hash a partir do seu e-mail da CWI.
+  </p>
+  <p>
+      Caso você não possua uma conta no gravatar ou não possua o e-mail da CWI cadastrado,
+      acesse: <a href="https://pt.gravatar.com/" target="_blank">https://pt.gravatar.com/</a> e faça os ajustes.
+  </p>
+  <p>
+      Após criar sua conta e inserir uma imagem para um endereço de e-mail, descubra sua Hash acessando: http://pt.gravatar.com/site/check/SEU_EMAIL.
+      Caso você tenha escolhido o e-mail da CWI, a sua imagem deve aparecer aqui automaticamente.
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="close()">
+      <i class="fa fa-times" aria-hidden="true"></i> Fechar
+  </button>
+</div>
