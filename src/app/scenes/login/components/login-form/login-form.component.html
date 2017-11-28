@@ -2,7 +2,7 @@
   <img src="/assets/logo_parking_lg.png">
   <form [formGroup]="formLogin" (ngSubmit)="doLogin(formLogin.value)">
     <input type="text" formControlName="username" placeholder="Usuário" class="form-control">
-    <input type="text" formControlName="password" placeholder="Senha" class="form-control">
+    <input type="password" formControlName="password" placeholder="Senha" class="form-control">
     <button class="btn btn-primary" type="submit">Entrar</button>
   </form>
 </div>
