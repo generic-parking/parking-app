@@ -1,3 +1,4 @@
+import { Router, RouterEvent } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public activeUrl: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe((s: RouterEvent) => {
+      if(s.url){
+        this.activeUrl = s.url;
+      }
+    });
   }
-
 }
