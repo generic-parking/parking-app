@@ -4,13 +4,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CommonModule } from '@angular/common';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ModalGravatarComponent } from './user-register/modal-gravatar/modal-gravatar.component';
 
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [UserRegisterComponent]
+  declarations: [
+    UserRegisterComponent, 
+    ModalGravatarComponent
+  ],entryComponents:[
+    ModalGravatarComponent
+  ]
 })
 export class UserModule { }
