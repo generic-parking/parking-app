@@ -1,3 +1,6 @@
-<p>
-  vehicle-register works!
-</p>
+<div class="container">
+  <app-title>Meus Veículos</app-title>
+  <app-vehicle-register-form
+    (doVehicleSaveEvent)="doSaveVehicle($event)"
+  ></app-vehicle-register-form>
+</div>

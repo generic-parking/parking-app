@@ -51,13 +51,6 @@ html{
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
 
-.page-header {
-    margin-top: 1%;
-    padding-bottom: 0px;
-    margin: 40px 0 20px;
-    border-bottom: 2px solid #FBB041;
-}
-
 a {
     color: #fbb041;
     text-decoration: none;

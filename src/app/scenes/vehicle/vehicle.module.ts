@@ -9,13 +9,15 @@ import { VehicleRoutingModule } from './vehicle-routing.module';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { ComponentsModule } from '../../components/components.module';
-import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
+import { FilterBarComponent } from './vehicle-search/components/filter-bar/filter-bar.component';
+import { VehicleRegisterFormComponent } from './vehicle-register/components/vehicle-register-form/vehicle-register-form.component';
 
 @NgModule({
   declarations: [
     VehicleRegisterComponent,
     VehicleSearchComponent,
-    FilterBarComponent
+    FilterBarComponent,
+    VehicleRegisterFormComponent
   ],
   imports: [
     CommonModule,
