@@ -13,9 +13,10 @@ export class UserRegisterComponent implements OnInit {
 
   public userForm: FormGroup;
   public userModel: User;
+  public maskInputCelular: any = { mask: ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/] };
 
-  constructor(private fb: FormBuilder, 
-              private modalService: NgbModal) { 
+  constructor(private fb: FormBuilder,
+    private modalService: NgbModal) {
 
     this.userModel = new User();
 
@@ -42,53 +43,53 @@ export class UserRegisterComponent implements OnInit {
   }
 
   public openModalGravatar(): void {
-    this.modalService.open(ModalGravatarComponent, { size: "lg"});
+    this.modalService.open(ModalGravatarComponent, { size: "lg" });
   }
-  
+
   public buildForm(): void {
     this.userForm = this.fb.group({
-      inputName : new FormControl(this.userModel.nome, [
+      inputName: new FormControl(this.userModel.nome, [
         Validators.required,
         Validators.min(3),
         Validators.max(100)
       ]),
-      inputGravatar : new FormControl(this.userModel.gravatar, [
+      inputGravatar: new FormControl(this.userModel.gravatar, [
         Validators.required
       ]),
-      inputCelular : new FormControl(this.userModel.celular, [
+      inputCelular: new FormControl(this.userModel.celular, [
         Validators.required,
         Validators.min(3),
         Validators.max(100)
       ]),
-      inputRamal : new FormControl(this.userModel.ramal, [
-        
+      inputRamal: new FormControl(this.userModel.ramal, [
+
       ]),
-      inputAndar : new FormControl(this.userModel.andar, [
+      inputAndar: new FormControl(this.userModel.andar, [
         Validators.required
       ]),
-      inputPosicao : new FormControl(this.userModel.posicao, [
+      inputPosicao: new FormControl(this.userModel.posicao, [
         Validators.required
       ]),
-      inputParticipaSorteio : new FormControl(this.userModel.participaSorteio, [
+      inputParticipaSorteio: new FormControl(this.userModel.participaSorteio, [
         Validators.required
       ]),
     });
-  }  
+  }
 
   public isInvalidControl(control: FormControl, title?: string): string {
     var hasHerror = control && (control.invalid && (control.dirty || control.touched));
     var msg = "";
-    
-    if(!title)
+
+    if (!title)
       title = "";
 
-    if(control && control.errors){
-      if(control.errors.required){
+    if (control && control.errors) {
+      if (control.errors.required) {
         msg = "Campo [" + title + "] obrigatório";
       }
     }
 
-    if(msg)
+    if (msg)
       return msg;
 
     return title;
@@ -96,10 +97,10 @@ export class UserRegisterComponent implements OnInit {
 
   public checkFormValid(form: FormGroup): boolean {
     var controls = Object.keys(form.controls)
-                          .map((key) => { return form.controls[key]; });
+      .map((key) => { return form.controls[key]; });
 
     controls.forEach((c) => {
-      if(c.invalid){
+      if (c.invalid) {
         c.markAsTouched();
       }
     });
@@ -107,8 +108,7 @@ export class UserRegisterComponent implements OnInit {
   }
 
   public save(): void {
-    
-    if(!this.checkFormValid(this.userForm)){
+    if (!this.checkFormValid(this.userForm)) {
       return;
     }
   }

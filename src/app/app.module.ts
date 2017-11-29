@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
     NgReduxModule,
     ComponentsModule,
     AboutModule,
-    RouterModule
+    RouterModule,
+    TextMaskModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
