@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -6,12 +6,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './modal-gravatar.component.html',
   styleUrls: ['./modal-gravatar.component.css']
 })
-export class ModalGravatarComponent implements OnInit {
+export class ModalGravatarComponent {
 
   constructor(public activeModal: NgbActiveModal) { }
-
-  ngOnInit() {
-  }
 
   public close(): void {
     this.activeModal.dismiss();

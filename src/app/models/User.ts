@@ -1,4 +1,3 @@
-
 export class User {
     public id: number;
     public usuario: string;
@@ -15,7 +14,7 @@ export class User {
     public vagaGerencial: boolean;
     public numeroVaga: number;
 
-    constructor() { 
+    constructor() {
         this.andar = 1;
         this.participaSorteio = false;
     }

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ModalGravatarComponent } from './user-register/modal-gravatar/modal-gravatar.component';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
@@ -13,12 +14,13 @@ import { ModalGravatarComponent } from './user-register/modal-gravatar/modal-gra
     NgbModule,
     UserRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
   ],
   declarations: [
-    UserRegisterComponent, 
+    UserRegisterComponent,
     ModalGravatarComponent
-  ],entryComponents:[
+  ], entryComponents: [
     ModalGravatarComponent
   ]
 })
