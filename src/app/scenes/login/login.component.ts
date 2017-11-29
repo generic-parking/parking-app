@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Login } from './model/login';
+
+import { LoginRestService } from '../../rest/login-rest.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss'],
+  providers: [LoginRestService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+  constructor(private loginService: LoginRestService) { }
 
-  ngOnInit() {
+  doLogin(login: Login): void {
+    this.loginService.doLogin(login);
   }
-
 }
