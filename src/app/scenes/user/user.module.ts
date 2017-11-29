@@ -1,3 +1,4 @@
+import { TextMaskModule } from 'angular2-text-mask';
 import { UserRoutingModule } from './user-routing.module';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,13 +16,14 @@ import { ComponentsModule } from '../../components/components.module';
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ComponentsModule
+    TextMaskModule,
+    ComponentsModule,
   ],
   declarations: [
     UserRegisterComponent,
-    ModalGravatarComponent
+    ModalGravatarComponent,
   ], entryComponents: [
-    ModalGravatarComponent
+    ModalGravatarComponent,
   ]
 })
 export class UserModule { }

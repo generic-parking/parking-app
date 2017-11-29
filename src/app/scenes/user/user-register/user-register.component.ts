@@ -13,6 +13,7 @@ export class UserRegisterComponent implements OnInit {
 
   public userForm: FormGroup;
   public userModel: User;
+  public maskInputCelular: any = { mask: ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/] };
 
   constructor(private fb: FormBuilder,
     private modalService: NgbModal) {
@@ -97,7 +98,6 @@ export class UserRegisterComponent implements OnInit {
   }
 
   public save(): void {
-
     if (!this.checkFormValid(this.userForm)) {
       return;
     }
