@@ -1,9 +1,7 @@
 <div class="container">
 
-  <div class="page-header">
-    <h3>Meu Perfil</h3>
-  </div>
-  
+  <app-title>Meu Perfil</app-title>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-1">
@@ -25,26 +23,26 @@
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">Nome *</label>
           <div class="col-sm-6">
-            <input type="text" 
-                    class="form-control" 
+            <input type="text"
+                    class="form-control"
                     formControlName="inputName"
                     [(ngModel)]="userModel.nome"
                     placeholder="Nome"
                     title="{{ isInvalidControl(userForm.controls.inputName, 'Nome') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputName) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputName, '') }">
           </div>
         </div>
         <div class="form-group">
           <label for="gravatar" class="col-sm-2 control-label">Hash Gravatar</label>
           <div class="col-sm-4">
             <div class="input-group">
-              <input type="text" 
-                      class="form-control" 
+              <input type="text"
+                      class="form-control"
                       formControlName="inputGravatar"
                       [(ngModel)]="userModel.gravatar"
                       placeholder="Hash Gravatar"
                       title="{{ isInvalidControl(userForm.controls.inputGravatar, 'Hash Gravatar') }}"
-                      [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputGravatar) }"> 
+                      [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputGravatar, '') }">
 
                       <span class="input-group-addon helper-gravatar" (click)="openModalGravatar()">?</span>
             </div>
@@ -60,27 +58,27 @@
                     [textMask]="maskInputCelular"
                     placeholder="Celular"
                     title="{{ isInvalidControl(userForm.controls.inpuCelular, 'Celular') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inpuCelular) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inpuCelular, '') }">
           </div>
         </div>
         <div class="form-group">
           <label for="ramal" class="col-sm-2 control-label">Ramal</label>
           <div class="col-sm-2">
-            <input type="number" 
-                    class="form-control" 
+            <input type="number"
+                    class="form-control"
                     formControlName="inputRamal"
                     [(ngModel)]="userModel.ramal"
                     placeholder="Ramal"
                     title="{{ isInvalidControl(userForm.controls.inputRamal, 'Ramal') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputRamal) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputRamal, '') }">
           </div>
         </div>
         <div class="form-group">
           <label for="andar" class="col-sm-2 control-label">Andar</label>
           <div class="col-sm-1">
               <div class="btn-toolbar" role="toolbar" aria-label="Andar">
-                <div class="btn-group mr-2" 
-                      role="group" 
+                <div class="btn-group mr-2"
+                      role="group"
                       ngbRadioGroup
                       aria-label="First group"
                       formControlName="inputAndar"
@@ -108,20 +106,20 @@
         <div class="form-group">
           <label for="inputPosicao" class="col-sm-2 control-label">Posição</label>
           <div class="col-sm-2">
-            <input type="text" class="form-control" 
+            <input type="text" class="form-control"
                     formControlName="inputPosicao"
                     [(ngModel)]="userModel.posicao"
                     placeholder="Posicao"
                     title="{{ isInvalidControl(userForm.controls.inputPosicao, 'Posicao') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputPosicao) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputPosicao, '') }">
           </div>
         </div>
         <div class="form-group ">
           <label class="col-sm-2 control-label">Participar do Sorteio</label>
           <div class="col-sm-1">
-              <div class="btn-group" 
-                    ngbRadioGroup 
-                    name="radioBasic" 
+              <div class="btn-group"
+                    ngbRadioGroup
+                    name="radioBasic"
                     formControlName="inputParticipaSorteio"
                     [(ngModel)]="userModel.participaSorteio">
                   <label ngbButtonLabel class="btn btn-secondary">
@@ -133,9 +131,9 @@
                 </div>
           </div>
         </div>
-          
-        <button hide-in-mobile="" 
-                type="submit" 
+
+        <button hide-in-mobile=""
+                type="submit"
                 class="btn btn-primary pull-right margin-bottom-sm">
                 <i class="fa fa-floppy-o" aria-hidden="true"></i>
                 Salvar

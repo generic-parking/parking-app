@@ -7,7 +7,7 @@ import { ModalGravatarComponent } from './modal-gravatar/modal-gravatar.componen
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
-  styleUrls: ['./user-register.component.css']
+  styleUrls: ['./user-register.component.css'],
 })
 export class UserRegisterComponent implements OnInit {
 
@@ -48,35 +48,25 @@ export class UserRegisterComponent implements OnInit {
 
   public buildForm(): void {
     this.userForm = this.fb.group({
-      inputName: new FormControl(this.userModel.nome, [
+      inputName: [this.userModel.nome, [
         Validators.required,
         Validators.min(3),
         Validators.max(100)
-      ]),
-      inputGravatar: new FormControl(this.userModel.gravatar, [
-        Validators.required
-      ]),
-      inputCelular: new FormControl(this.userModel.celular, [
+      ]],
+      inputGravatar: [this.userModel.gravatar, [Validators.required]],
+      inputCelular: [this.userModel.celular, [
         Validators.required,
         Validators.min(3),
         Validators.max(100)
-      ]),
-      inputRamal: new FormControl(this.userModel.ramal, [
-
-      ]),
-      inputAndar: new FormControl(this.userModel.andar, [
-        Validators.required
-      ]),
-      inputPosicao: new FormControl(this.userModel.posicao, [
-        Validators.required
-      ]),
-      inputParticipaSorteio: new FormControl(this.userModel.participaSorteio, [
-        Validators.required
-      ]),
+      ]],
+      inputRamal: [this.userModel.ramal, []],
+      inputAndar: [this.userModel.andar, [Validators.required]],
+      inputPosicao: [this.userModel.posicao, [Validators.required]],
+      inputParticipaSorteio: [this.userModel.participaSorteio, [Validators.required]],
     });
   }
 
-  public isInvalidControl(control: FormControl, title?: string): string {
+  public isInvalidControl(control: any, title: string): string {
     var hasHerror = control && (control.invalid && (control.dirty || control.touched));
     var msg = "";
 

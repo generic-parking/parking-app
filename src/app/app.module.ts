@@ -12,7 +12,6 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,10 @@ import { AppRoutingModule } from './app-routing.module';
     ComponentsModule,
     AboutModule,
     RouterModule,
+<<<<<<< HEAD
     TextMaskModule,
+=======
+>>>>>>> cf880df769a23f687310b951d693fad730ef9c83
   ],
   providers: [],
   bootstrap: [AppComponent]
