@@ -1,12 +1,15 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { HeaderComponent } from './header/header.component';
+import { TitleComponent } from './title/title.component';
 
 
 const allComponents = [
-  HeaderComponent
+  HeaderComponent,
+  TitleComponent
 ]
 
 @NgModule({

@@ -6,7 +6,6 @@ import { LoginRestService } from '../../rest/login-rest.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
   providers: [LoginRestService]
 })
 export class LoginComponent {
@@ -14,6 +13,9 @@ export class LoginComponent {
   constructor(private loginService: LoginRestService) { }
 
   doLogin(login: Login): void {
-    this.loginService.doLogin(login);
+    this.loginService.doLogin(login).subscribe(data => {
+      console.log(data);
+      // busca dados do usuario
+    });
   }
 }
