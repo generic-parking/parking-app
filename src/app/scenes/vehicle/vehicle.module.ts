@@ -11,13 +11,15 @@ import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { ComponentsModule } from '../../components/components.module';
 import { FilterBarComponent } from './vehicle-search/components/filter-bar/filter-bar.component';
 import { VehicleRegisterFormComponent } from './vehicle-register/components/vehicle-register-form/vehicle-register-form.component';
+import { VehicleListComponent } from './vehicle-register/components/vehicle-list/vehicle-list.component';
 
 @NgModule({
   declarations: [
     VehicleRegisterComponent,
     VehicleSearchComponent,
     FilterBarComponent,
-    VehicleRegisterFormComponent
+    VehicleRegisterFormComponent,
+    VehicleListComponent
   ],
   imports: [
     CommonModule,
