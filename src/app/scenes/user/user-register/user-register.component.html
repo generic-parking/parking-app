@@ -29,7 +29,7 @@
                     [(ngModel)]="userModel.nome"
                     placeholder="Nome"
                     title="{{ isInvalidControl(userForm.controls.inputName, 'Nome') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputName) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputName, '') }">
           </div>
         </div>
         <div class="form-group">
@@ -42,7 +42,7 @@
                       [(ngModel)]="userModel.gravatar"
                       placeholder="Hash Gravatar"
                       title="{{ isInvalidControl(userForm.controls.inputGravatar, 'Hash Gravatar') }}"
-                      [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputGravatar) }">
+                      [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputGravatar, '') }">
 
                       <span class="input-group-addon helper-gravatar" (click)="openModalGravatar()">?</span>
             </div>
@@ -57,7 +57,7 @@
                     [(ngModel)]="userModel.celular"
                     placeholder="Celular"
                     title="{{ isInvalidControl(userForm.controls.inpuCelular, 'Celular') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inpuCelular) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inpuCelular, '') }">
           </div>
         </div>
         <div class="form-group">
@@ -69,7 +69,7 @@
                     [(ngModel)]="userModel.ramal"
                     placeholder="Ramal"
                     title="{{ isInvalidControl(userForm.controls.inputRamal, 'Ramal') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputRamal) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputRamal, '') }">
           </div>
         </div>
         <div class="form-group">
@@ -110,7 +110,7 @@
                     [(ngModel)]="userModel.posicao"
                     placeholder="Posicao"
                     title="{{ isInvalidControl(userForm.controls.inputPosicao, 'Posicao') }}"
-                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputPosicao) }">
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputPosicao, '') }">
           </div>
         </div>
         <div class="form-group ">

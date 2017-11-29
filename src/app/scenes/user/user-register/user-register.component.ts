@@ -65,7 +65,7 @@ export class UserRegisterComponent implements OnInit {
     });
   }
 
-  public isInvalidControl(control: FormControl, title?: string): string {
+  public isInvalidControl(control: any, title: string): string {
     var hasHerror = control && (control.invalid && (control.dirty || control.touched));
     var msg = "";
 
