@@ -15,11 +15,9 @@ export class VehicleSearchService {
   constructor(private vehicleRest: VehicleRestService) { }
 
   doSearch(search: Search) {
-    console.log(search);
-
-    // this.vehicleRest.doSearch(search).subscribe(data =>
-    //   this.vehicleSearchSource.next(data.content)
-    // );
+    this.vehicleRest.doSearch(search).subscribe(data =>
+      this.vehicleSearchSource.next(data.content)
+    );
   }
 
 }

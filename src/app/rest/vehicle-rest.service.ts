@@ -9,7 +9,7 @@ import { Search } from './../scenes/vehicle/model/search';
 export class VehicleRestService {
   constructor(private http: Http) { }
 
-  doSearch(search: Search): Subscribable<Object> {
+  doSearch(search: Search) {
     return this.http.get('api/veiculo/pesquisar', { search: search }).map(response => response.json());
   }
 

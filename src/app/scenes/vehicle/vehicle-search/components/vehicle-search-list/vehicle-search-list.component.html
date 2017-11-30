@@ -1,3 +1,26 @@
-<p>
-  vehicle-search-list works!
-</p>
+<app-pagination
+></app-pagination>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Veículo</th>
+      <th>Proprietário</th>
+      <th>Contato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let veiculo of veiculos">
+      <th scope="row">
+        <p>{{veiculo.placa}}</p>
+        <p>{{veiculo.modelo</p>
+      </th>
+      <td>Mark</td>
+      <td>Otto</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<app-pagination
+></app-pagination>

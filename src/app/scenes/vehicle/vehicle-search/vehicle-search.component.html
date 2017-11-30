@@ -5,5 +5,7 @@
     (doSearchEvent)="vehicleSearch.doSearch($event)"
   ></app-filter-bar>
 
-
+  <app-vehicle-search-list
+    [vehicles]="vehicleSearch.vehicles$ | async"
+  ></app-vehicle-search-list>
 </div>
