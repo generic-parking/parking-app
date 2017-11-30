@@ -1,0 +1,133 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-1">
+      <div class="gravatar gravatar-profile">
+        <img src="https://s.gravatar.com/avatar/{{ userModel.gravatar }}?s=60&d=mm" />
+      </div>
+    </div>
+    <div class="col-lg">
+      <span>{{ userModel.usuario }}</span>
+      <br>
+      <span>Criado em: {{ userModel.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</span>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <form class="form-horizontal" [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Nome *</label>
+        <div class="col-sm-6">
+          <input type="text"
+                  class="form-control"
+                  id="inputName"
+                  formControlName="inputName"
+                  [(ngModel)]="userModel.nome"
+                  placeholder="Nome"
+                  title="{{ isInvalidControl(userForm.controls.inputName, 'Nome') }}"
+                  [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputName, '') }">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputGravatar" class="col-sm-2 control-label">Hash Gravatar</label>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <input type="text"
+                    class="form-control"
+                    id="inputGravatar"
+                    formControlName="inputGravatar"
+                    [(ngModel)]="userModel.gravatar"
+                    placeholder="Hash Gravatar"
+                    title="{{ isInvalidControl(userForm.controls.inputGravatar, 'Hash Gravatar') }}"
+                    [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputGravatar, '') }">
+
+                    <span class="input-group-addon helper-gravatar" (click)="openModalGravatar()">?</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputCelular" class="col-sm-2 control-label">Celular *</label>
+        <div class="col-sm-2">
+          <input type="tel" 
+                  class="form-control" 
+                  celMask
+                  id="inputCelular"
+                  formControlName="inputCelular"
+                  [(ngModel)]="userModel.celular"
+                  placeholder="Celular"
+                  title="{{ isInvalidControl(userForm.controls.inpuCelular, 'Celular') }}"
+                  [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inpuCelular, '') }">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputRamal" class="col-sm-2 control-label">Ramal</label>
+        <div class="col-sm-2">
+          <input type="number"
+                  class="form-control"
+                  id="inputRamal"
+                  formControlName="inputRamal"
+                  [(ngModel)]="userModel.ramal"
+                  placeholder="Ramal"
+                  title="{{ isInvalidControl(userForm.controls.inputRamal, 'Ramal') }}"
+                  [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputRamal, '') }">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAndar" class="col-sm-2 control-label">Andar</label>
+        <div class="col-sm-1">
+            <div class="btn-toolbar" role="toolbar" aria-label="Andar">
+              <div class="btn-group mr-2"
+                    role="group"
+                    ngbRadioGroup
+                    aria-label="First group"
+                    id="inputAndar"
+                    formControlName="inputAndar"
+                    [(ngModel)]="userModel.andar">
+                <label ngbButtonLabel class="btn btn-secondary" *ngFor="let floor of floors">
+                  <input ngbButton type="radio" [value]="floor.id">{{ floor.description }}
+                </label>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPosicao" class="col-sm-2 control-label">Posição</label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control"
+                  id="inputPosicao"
+                  formControlName="inputPosicao"
+                  [(ngModel)]="userModel.posicao"
+                  placeholder="Posicao"
+                  title="{{ isInvalidControl(userForm.controls.inputPosicao, 'Posicao') }}"
+                  [ngClass]="{ 'input-error': isInvalidControl(userForm.controls.inputPosicao, '') }">
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="inputParticipaSorteio" class="col-sm-2 control-label">Participar do Sorteio</label>
+        <div class="col-sm-1">
+            <div class="btn-group"
+                  ngbRadioGroup
+                  id="inputParticipaSorteio"
+                  formControlName="inputParticipaSorteio"
+                  [(ngModel)]="userModel.participaSorteio">
+                <label ngbButtonLabel class="btn btn-secondary">
+                  <input ngbButton type="radio" [value]="true"> Sim
+                </label>
+                <label ngbButtonLabel class="btn btn-secondary">
+                  <input ngbButton type="radio" [value]="false"> Não
+                </label>
+              </div>
+        </div>
+      </div>
+
+      <button hide-in-mobile=""
+              type="submit"
+              class="btn btn-primary pull-right margin-bottom-sm">
+              <i class="fa fa-floppy-o" aria-hidden="true"></i>
+              Salvar
+      </button>
+    </form>
+  </div>
+</div>

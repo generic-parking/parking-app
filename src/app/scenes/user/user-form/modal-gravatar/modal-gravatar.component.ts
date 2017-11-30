@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-modal-gravatar',
   templateUrl: './modal-gravatar.component.html',
-  styleUrls: ['./modal-gravatar.component.css']
+  styleUrls: ['./modal-gravatar.component.scss']
 })
 export class ModalGravatarComponent {
 

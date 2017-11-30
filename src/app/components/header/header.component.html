@@ -54,10 +54,20 @@
     </ul>
     <span class="navbar-text">
       
-      <a class="nav-link" [routerLink]="['/about']">
-        <i class="fa fa-sign-out" aria-hidden="true"></i>
-        Sair
-      </a>
+      
+        <a hide-in-mobile href="#/profile" class="navbar-profile">
+            <div class="gravatar gravatar-navbar pull-left">
+                <!-- <img src="https://s.gravatar.com/avatar/{{user.avatar}}?s=25" /> -->
+            </div>
+            <!-- {{ user.name }} -->
+        </a>
+        <!-- <a show-in-mobile [routerLink]="['/profile']" data-toggle="collapse" data-target="#itens-menu">{{user.name}}</a> -->
+      
+        <a class="nav-link" [routerLink]="['/about']">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          Sair
+        </a>
+      
     </span>
   </div>
 </nav>
