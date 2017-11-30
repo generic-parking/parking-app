@@ -6,7 +6,7 @@ import { VehicleRegisterComponent } from './vehicle-register/vehicle-register.co
 const routes = [
   { path: '', component: VehicleSearchComponent },
   { path: 'register', component: VehicleRegisterComponent },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

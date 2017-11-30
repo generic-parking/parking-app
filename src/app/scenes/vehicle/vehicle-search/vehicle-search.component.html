@@ -1,6 +1,9 @@
 <div class="container">
-  <app-title> Procurar Veículo</app-title>
+  <app-title>Procurar Veículo</app-title>
+
   <app-filter-bar
-    (doSearchEvent)="doSearch($event)"
+    (doSearchEvent)="vehicleSearch.doSearch($event)"
   ></app-filter-bar>
+
+
 </div>
