@@ -1,9 +1,13 @@
 <div class="container">
   <app-title>Meus Veículos</app-title>
   <app-vehicle-register-form
-    (doVehicleSaveEvent)="doSaveVehicle($event)"
+    [vehicle]="vehicleService.vehicle$ | async"
+    (doVehicleSaveEvent)="vehicleService.doRegisterVehicle($event)"
   ></app-vehicle-register-form>
   <app-vehicle-list
+    [vehicles]="vehicleService.vehicles$ | async"
+    (doDeleteVehicle)="vehicleService.doDeleteVehicle($event)"
+    (doEditVehicle)="vehicleService.doEditVehicle($event)"
   >
   </app-vehicle-list>
 </div>

@@ -27,7 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule,
     TextMaskModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

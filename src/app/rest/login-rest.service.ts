@@ -16,4 +16,7 @@ export class LoginRestService {
     return this.http.post('/api/login', formData, options);
   }
 
+  doCheckIsLogged(): Subscribable<Object> {
+    return this.http.get('/api//logged-in').map(response => response.json());
+  }
 }

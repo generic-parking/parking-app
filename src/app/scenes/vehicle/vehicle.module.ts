@@ -1,3 +1,5 @@
+import { UserRestService } from './../../rest/user-rest.service';
+import { VehicleRestService } from './../../rest/vehicle-rest.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +22,10 @@ import { VehicleListComponent } from './vehicle-register/components/vehicle-list
     FilterBarComponent,
     VehicleRegisterFormComponent,
     VehicleListComponent
+  ],
+  providers: [
+    VehicleRestService,
+    UserRestService,
   ],
   imports: [
     CommonModule,
