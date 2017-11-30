@@ -31,10 +31,7 @@ import { CelMaskPipe } from './pipes/cel-mask.pipe';
     AboutModule,
     RouterModule,
     TextMaskModule,
-<<<<<<< HEAD
     ToastrModule.forRoot(),
-=======
->>>>>>> 30843a8b5ce20f9c4aea16d6909f18f7e8b5ba3f
   ],
   providers: [ ],
   bootstrap: [AppComponent]
