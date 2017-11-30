@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Subscribable } from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Login } from './model/login';
 
 import { LoginRestService } from '../../rest/login-rest.service';
@@ -8,14 +10,25 @@ import { LoginRestService } from '../../rest/login-rest.service';
   templateUrl: './login.component.html',
   providers: [LoginRestService]
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginRestService) { }
+  constructor(private loginService: LoginRestService, private router: Router) { }
+
+  redirectToDefault() {
+    this.router.navigate(['/profile']);
+  }
 
   doLogin(login: Login): void {
     this.loginService.doLogin(login).subscribe(data => {
-      console.log(data);
-      // busca dados do usuario
+      this.redirectToDefault();
+    });
+  }
+
+  ngOnInit() {
+    this.loginService.doCheckIsLogged().subscribe(isLogged => {
+      if (isLogged) {
+        this.redirectToDefault();
+      }
     });
   }
 }

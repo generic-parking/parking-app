@@ -1,3 +1,5 @@
 export class Search {
-  placa:string;
+  placa: string;
+  totalPage: number;
+  page: number;
 }

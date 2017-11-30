@@ -1,0 +1,37 @@
+<div *ngIf="isRegisterOpen" class="panel">
+
+  <form action="" class="form-horizontal" [formGroup]="formVehicle" (ngSubmit)="doSave(formVehicle.value)">
+    <div class="form-group row">
+      <label for="inputPlaca" class="col-md-1 col-form-label">Placa *</label>
+      <div class="col-md-3">
+        <input type="text" formControlName="placa" class="form-control" id="inputPlaca" placeholder="Placa">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputModelo" class="col-md-1 col-form-label">Modelo *</label>
+      <div class="col-md-3">
+        <input type="text" formControlName="modelo" class="form-control" id="inputModelo" placeholder="Modelo">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputCor" class="col-md-1 col-form-label">Cor *</label>
+      <div class="col-md-3">
+          <select class="form-control" id="inputCor" formControlName="cor">
+            <option></option>
+            <option *ngFor="let color of colors" value="{{color}}">{{color}}</option>
+          </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-default" (click)="closeRegister()">Cancelar</button>
+      <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Salvar</button>
+    </div>
+  </form>
+
+</div>
+<button *ngIf="!isRegisterOpen" class="btn btn-primary" (click)="openRegister()">
+  <i class="fa fa-plus"></i> Adicionar
+</button>

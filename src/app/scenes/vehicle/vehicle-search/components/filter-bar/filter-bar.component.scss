@@ -1,0 +1,16 @@
+:host {
+  .form-group {
+    margin-top: 20px;
+  }
+
+  .btn {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0px;
+    cursor: pointer;
+    color: #555;
+    &:hover {
+      color: #fff;
+    }
+  }
+}

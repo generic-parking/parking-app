@@ -9,11 +9,14 @@ export class LoginRestService {
   constructor(private http: Http) { }
 
   doLogin(login: Login): Subscribable<Object> {
-    const formData = "username=" + login.username + "&password=" + login.password;
+    const formData = 'username=' + login.username + '&password=' + login.password;
     const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const options = new RequestOptions({ headers: headers });
 
     return this.http.post('/api/login', formData, options);
   }
 
+  doCheckIsLogged(): Subscribable<Object> {
+    return this.http.get('/api//logged-in').map(response => response.json());
+  }
 }
