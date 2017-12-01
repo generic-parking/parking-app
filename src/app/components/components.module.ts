@@ -1,3 +1,4 @@
+import { PaginationComponent } from './pagination/pagination.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,8 +10,9 @@ import { TitleComponent } from './title/title.component';
 
 const allComponents = [
   HeaderComponent,
-  TitleComponent
-]
+  TitleComponent,
+  PaginationComponent
+];
 
 @NgModule({
   imports: [

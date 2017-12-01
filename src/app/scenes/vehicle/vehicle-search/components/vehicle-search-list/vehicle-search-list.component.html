@@ -1,0 +1,29 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Veículo</th>
+      <th>Proprietário</th>
+      <th>Contato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicle of vehicles">
+      <th scope="row">
+        <p>{{vehicle.placa}}</p>
+        <p>{{vehicle.modelo}}</p>
+      </th>
+      <td>Mark</td>
+      <td class="group">
+        <span>
+          <strong>Ramal: </strong> {{vehicle.proprietario.ramal}}
+        </span>
+        <span>
+          <strong>E-mail: </strong> {{vehicle.proprietario.usuario}}@cwi.com.br
+        </span>
+        <span>
+          <strong>Celular: </strong> {{vehicle.proprietario.celular}}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

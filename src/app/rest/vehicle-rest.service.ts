@@ -1,16 +1,16 @@
-import { Vehicle } from './../scenes/vehicle/model/vehicle';
-import { Subscribable } from 'rxjs/Observable';
-import { Search } from './../scenes/vehicle/model/search';
-import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { toString } from '@ng-bootstrap/ng-bootstrap/util/util';
+import { Http } from '@angular/http';
+import { Subscribable } from 'rxjs/Observable';
+
+import { Vehicle } from './../scenes/vehicle/model/vehicle';
+import { Search } from './../scenes/vehicle/model/search';
 
 @Injectable()
 export class VehicleRestService {
   constructor(private http: Http) { }
 
-  doSearch(search: Search): Subscribable<Vehicle> {
-    return this.http.get('api/veiculo/pesquisar', { search: search });
+  doSearch(search: Search) {
+    return this.http.get('api/veiculo/pesquisar', { search: search }).map(response => response.json());
   }
 
   doGetMyVehicles() {

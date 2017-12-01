@@ -8,9 +8,9 @@ import { User } from '../../../models/User';
   templateUrl: './vehicle-register.component.html',
   providers: [VehicleRegisterService]
 })
-export class VehicleRegisterComponent implements OnInit{
+export class VehicleRegisterComponent implements OnInit {
 
-  constructor( public vehicleService: VehicleRegisterService) { }
+  constructor(public vehicleService: VehicleRegisterService) { }
 
   ngOnInit() {
     this.vehicleService.doListMyVehicles();

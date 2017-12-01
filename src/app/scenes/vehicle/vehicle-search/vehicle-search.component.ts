@@ -1,16 +1,13 @@
-import { VehicleRestService } from './../../../rest/vehicle-rest.service';
 import { Component } from '@angular/core';
-import { Search } from '../model/search';
+import { VehicleSearchService } from './vehicle-search.service';
 
 @Component({
   selector: 'app-vehicle-search',
   templateUrl: './vehicle-search.component.html',
-  providers: [VehicleRestService],
+  providers: [VehicleSearchService]
 })
 export class VehicleSearchComponent {
-  constructor(private vehicleRest: VehicleRestService) { }
 
-  doSearch(search: Search) {
-    this.vehicleRest.doSearch(search).subscribe(console.log);
-  }
+  constructor(public vehicleSearch: VehicleSearchService) { }
+
 }
