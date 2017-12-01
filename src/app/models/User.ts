@@ -15,6 +15,7 @@ export class User {
     public numeroVaga: number;
 
     constructor() {
+        
         this.andar = 1;
         this.participaSorteio = false;
     }

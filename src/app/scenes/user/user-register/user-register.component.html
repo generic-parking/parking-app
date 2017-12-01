@@ -2,6 +2,6 @@
 
   <app-title>Meu Perfil</app-title>
 
-  <app-user-form [userModel]="userModel" (onFormValidSubmit)="save($event)"></app-user-form>  
+  <app-user-form [userModel]="user$ | async" (onFormValidSubmit)="save($event)"></app-user-form>  
 </div>
 

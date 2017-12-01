@@ -1,11 +1,10 @@
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { UserService } from './../../../rest/user.service';
 import { User } from './../../../models/User';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-
-
 
 @Component({
   selector: 'app-user-register',
@@ -14,7 +13,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UserRegisterComponent {
 
-  public userModel: User;
+  private userRegisterSource = new BehaviorSubject<User>(null);
+  public user$ = this.userRegisterSource.asObservable();
   
   constructor(private fb: FormBuilder, 
               private userService: UserService,
@@ -23,8 +23,9 @@ export class UserRegisterComponent {
   }
 
   public loadUser(): void {
-    this.userModel = new User();
-    this.userService.getUser().subscribe((user) => this.userModel = user);
+    this.userService.getUser().subscribe((user) => {
+      this.userRegisterSource.next(user);
+    });
   }
 
   public save(user: User): void {

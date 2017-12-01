@@ -1,8 +1,10 @@
+import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ModalGravatarComponent } from './modal-gravatar/modal-gravatar.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { User } from './../../../models/User';
+
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, SimpleChanges } from '@angular/core';
+import { User } from '../../../../models/User';
 
 
 @Component({
@@ -10,24 +12,25 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss']
 })
-export class UserFormComponent {
-
-  @Input() public userModel: User;
+export class UserFormComponent implements OnChanges {
+  
+  @Input() public userModel: User = new User();
   @Output() public onFormValidSubmit: EventEmitter<any> = new EventEmitter<any>();
 
   public floors: Array<any>;
   public userForm: FormGroup;
 
-  public model: any;
-
   constructor(private fb: FormBuilder,
     private modalService: NgbModal) {
-
-    if(!this.userModel)  
-      this.userModel = new User();
-
+    
     this.buildFloors();
     this.buildForm();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.userModel.currentValue) {
+      this.buildForm();
+    }
   }
 
   public openModalGravatar(): void {
@@ -46,22 +49,24 @@ export class UserFormComponent {
 
   public buildForm(): void {
     this.userForm = this.fb.group({
-      inputName: [this.userModel.nome, [
+      "nome": [this.userModel.nome, [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(100)
       ]],
-      inputGravatar: [this.userModel.gravatar, [Validators.required]],
-      inputCelular: [this.userModel.celular, [
+      "gravatar": [this.userModel.gravatar, [Validators.required]],
+      "celular": [this.userModel.celular, [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(100)
       ]],
-      inputRamal: [this.userModel.ramal, []],
-      inputAndar: [this.userModel.andar, [Validators.required]],
-      inputPosicao: [this.userModel.posicao, [Validators.required]],
-      inputParticipaSorteio: [this.userModel.participaSorteio, [Validators.required]],
+      "ramal": [this.userModel.ramal, []],
+      "andar": [this.userModel.andar, [Validators.required]],
+      "posicao": [this.userModel.posicao, [Validators.required]],
+      "participaSorteio": [this.userModel.participaSorteio, [Validators.required]],
     });
+
+    //this.userForm.setValue(this.userModel);
   }
 
   public isInvalidControl(control: any, title: string): string {
