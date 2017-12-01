@@ -5,6 +5,12 @@
     (doSearchEvent)="vehicleSearch.doSearch($event)"
   ></app-filter-bar>
 
+
+
+  <app-pagination
+    [page]="vehicleSearch.filter$ | async"
+  ></app-pagination>
+
   <app-vehicle-search-list
     [vehicles]="vehicleSearch.vehicles$ | async"
   ></app-vehicle-search-list>
