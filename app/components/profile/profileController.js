@@ -15,8 +15,16 @@ angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', '
 
         $scope.gruposCarona = Groups.query();
 
-        $scope.limpaGrupo = function () {
+        $scope.onOferecerCarona = function () {
+            // Limpa o grupo
             $scope.owner.proprietarioGrupo = null;
+            // Garante que não vai participar do sorteio
+            $scope.owner.participaSorteio = false;
+        };
+
+        $scope.onParticiparDeGrupo = function () {
+            // Garante que não vai participar do sorteio
+            $scope.owner.participaSorteio = false;
         };
 
         $scope.ownerPromise = Owner.get({}, function (data) {
