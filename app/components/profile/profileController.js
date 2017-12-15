@@ -15,9 +15,9 @@ angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', '
 
         $scope.gruposCarona = Groups.query();
 
-        $scope.$watch('owner.ofereceCarona', function(newValue, oldValue) {
+        $scope.limpaGrupo = function () {
             $scope.owner.proprietarioGrupo = null;
-        });
+        };
 
         $scope.ownerPromise = Owner.get({}, function (data) {
             $scope.owner = data;

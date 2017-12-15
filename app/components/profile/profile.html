@@ -104,7 +104,7 @@
                 <div class="form-group" ng-if="!owner.vagaGerencial">
                     <label for="posicao" class="col-sm-2 control-label">Oferece Carona</label>
                     <div class="col-sm-2">
-                        <label class="radio-inline"><input type="radio" name="ofereceCarona" ng-model="owner.ofereceCarona" ng-value="true">Sim</label>
+                        <label class="radio-inline"><input type="radio" name="ofereceCarona" ng-model="owner.ofereceCarona" ng-value="true" ng-change="limpaGrupo()">Sim</label>
                         <label class="radio-inline"><input type="radio" name="ofereceCarona" ng-model="owner.ofereceCarona" ng-value="false">Não</label>
                     </div>
                 </div>
