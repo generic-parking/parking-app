@@ -1,6 +1,6 @@
 'use strict';
-angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', 'CEP', '$uibModal', 'md5',
-    function ($scope, Owner, CEP, $uibModal, md5) {
+angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', 'Groups', 'CEP', '$uibModal', 'md5',
+    function ($scope, Owner, Groups, CEP, $uibModal, md5) {
 
         $scope.disableCidade = true;
         $scope.disableBairro = true;
@@ -12,6 +12,20 @@ angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', '
             { id: 4, description: '4°' },
             { id: 5, description: '5°' }
         ];
+
+        $scope.gruposCarona = Groups.query();
+
+        $scope.onOferecerCarona = function () {
+            // Limpa o grupo
+            $scope.owner.proprietarioGrupo = null;
+            // Garante que não vai participar do sorteio
+            $scope.owner.participaSorteio = false;
+        };
+
+        $scope.onParticiparDeGrupo = function () {
+            // Garante que não vai participar do sorteio
+            $scope.owner.participaSorteio = false;
+        };
 
         $scope.ownerPromise = Owner.get({}, function (data) {
             $scope.owner = data;
