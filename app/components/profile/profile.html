@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="form-group" ng-if="!owner.vagaGerencial">
-                    <label for="posicao" class="col-sm-2 control-label" uib-tooltip="Marque esta opção para organizar um grupo de carona.">Oferecer Carona</label>
+                    <label for="posicao" class="col-sm-2 control-label" uib-tooltip="Marque esta opção para organizar um grupo de carona.">Representante de Grupo</label>
                     <div class="col-sm-2">
                         <label class="radio-inline"><input type="radio" name="ofereceCarona" ng-model="owner.ofereceCarona" ng-value="true" ng-change="onOferecerCarona()">Sim</label>
                         <label class="radio-inline"><input type="radio" name="ofereceCarona" ng-model="owner.ofereceCarona" ng-value="false">Não</label>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="form-group" ng-if="!owner.vagaGerencial">
-                    <label for="posicao" class="col-sm-2 control-label" uib-tooltip="Caso você participe de um grupo de carona, selecione o organizador do grupo.">Grupo de Carona</label>
+                    <label for="posicao" class="col-sm-2 control-label" uib-tooltip="Caso você participe de um grupo de carona, selecione o representante do grupo.">Grupo de Carona</label>
                     <div class="col-sm-3">
                         <select class="form-control" ng-model="owner.proprietarioGrupo" ng-options="grupo.nome for grupo in gruposCarona track by grupo.id"
                             ng-disabled="owner.ofereceCarona" ng-change="onParticiparDeGrupo()">
