@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="form-group" ng-if="!owner.vagaGerencial">
-                    <label for="posicao" class="col-sm-2 control-label" uib-tooltip="Se você participar de um grupo de carona ou organizar um, não será possível participar do sorteio individual.">Participar do Sorteio</label>
+                    <label for="posicao" class="col-sm-2 control-label" uib-tooltip="Se você participar de um grupo de carona ou organizar um, automaticamente participará do sorteio.">Participar do Sorteio</label>
                     <div class="col-sm-2">
                         <label class="radio-inline"><input type="radio" name="sorteio" ng-model="owner.participaSorteio" ng-value="true" ng-disabled="owner.ofereceCarona || owner.proprietarioGrupo">Sim</label>
                         <label class="radio-inline"><input type="radio" name="sorteio" ng-model="owner.participaSorteio" ng-value="false" ng-disabled="owner.ofereceCarona || owner.proprietarioGrupo">Não</label>

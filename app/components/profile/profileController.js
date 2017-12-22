@@ -18,13 +18,13 @@ angular.module('appControllers').controller('ProfileCtrl', ['$scope', 'Owner', '
         $scope.onOferecerCarona = function () {
             // Limpa o grupo
             $scope.owner.proprietarioGrupo = null;
-            // Garante que não vai participar do sorteio
-            $scope.owner.participaSorteio = false;
+            // Garante que vai participar do sorteio
+            $scope.owner.participaSorteio = true;
         };
 
         $scope.onParticiparDeGrupo = function () {
-            // Garante que não vai participar do sorteio
-            $scope.owner.participaSorteio = false;
+            // Garante que vai participar do sorteio
+            $scope.owner.participaSorteio = true;
         };
 
         $scope.ownerPromise = Owner.get({}, function (data) {
