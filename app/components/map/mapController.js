@@ -3,8 +3,8 @@ angular.module('appControllers').controller('MapCtrl', ['$scope',
     function ($scope) {
 
         $scope.buscarVaga = function () {
-            var element = document.getElementById("mapa-svg");
-            var svgDocument = element.contentDocument;
+            var element = angular.element(document).find("#mapa-svg")[0];
+            var svgDocument = angular.element(element.contentDocument);
 
             clearSvg(svgDocument);
 
@@ -17,7 +17,7 @@ angular.module('appControllers').controller('MapCtrl', ['$scope',
                 vaga = "0" + vaga;
             }
 
-            var svgItem = svgDocument.querySelector('#vaga_E' + vaga + ' rect');
+            var svgItem = svgDocument.find('#vaga_E' + vaga + ' rect')[0];
 
             if (svgItem) {
                 svgItem.setAttribute("style", "fill: #f4f142; stroke: red;");
@@ -27,7 +27,7 @@ angular.module('appControllers').controller('MapCtrl', ['$scope',
         };
 
         var clearSvg = function(svgDocument) {
-            var rects = svgDocument.querySelectorAll("g[id^='vaga_E'] rect");
+            var rects = svgDocument.find("g[id^='vaga_E'] rect");
             for (var r of rects) {
                 r.style = 'fill:#C4C4C4; stroke:none';
             }
