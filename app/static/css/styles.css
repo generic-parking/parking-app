@@ -5,6 +5,22 @@ body {
 /* Angular Bootstrap fix */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
+/* HTML5 overrides */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* LOGIN */
 .form-login {
     max-width: 330px;

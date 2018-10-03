@@ -3,5 +3,20 @@
 </div>
 
 <div class="container-fluid">
-    <img src="static/images/map.png" class="img-responsive" />
+    <form ng-submit="buscarVaga()">
+        <div class="input-group row">
+            <input type="number" class="form-control btn-block uppercase" id="vaga" placeholder="Procure por uma vaga..." 
+            min="1" max="99" autofocus autocomplete="off" ng-model="vagaConsultada" ng-submit="buscarVaga()" onClick="this.select();">
+
+            <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <span class="fa fa-search"></span>
+            </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid" style="padding: 0">    
+    <object id="mapa-svg" data="static/images/map.svg" type="image/svg+xml" class="img-responsive"></object>
 </div>

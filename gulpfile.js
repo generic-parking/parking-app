@@ -52,6 +52,7 @@ var config = {
         './app/components/login/loginController.js',
         './app/components/login/logoutController.js',
         './app/components/search/searchController.js',
+        './app/components/map/mapController.js',
         './app/components/profile/profileController.js',
         './app/components/vehicle/vehicleController.js'
     ],
@@ -70,7 +71,14 @@ gulp.task('clean', function () {
 // Copia o conteúdo estático: css e imagens'
 gulp.task('static', ['clean'], function () {
     return gulp.src(config.static)
-        .pipe(imagemin())
+        .pipe(imagemin([
+            // Não deve remover os IDs pois o existe uma implementação que lê os ids do map.svg. Veja em mapController.js.
+            imagemin.svgo({
+                plugins : [
+                    {cleanupIDs : false}
+                ]
+            })
+        ]))
         .pipe(gulp.dest(config.dist.dir + '/static'));
 });
 

@@ -32,6 +32,7 @@ angular.module('app').config(['$routeProvider',
         }).
         when('/map', {
             templateUrl: 'components/map/map.html',
+            controller: 'MapCtrl',
             activePage: 'map'
         }).
         otherwise({
