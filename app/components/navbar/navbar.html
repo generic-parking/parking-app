@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top" ng-show="user.id !== undefined">
+<nav class="navbar navbar-default navbar-fixed-top" ng-show="$route.current.activePage !== undefined">
+
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#itens-menu">
@@ -38,12 +39,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a hide-in-mobile href="#/profile" class="navbar-profile">
-                        <div class="gravatar gravatar-navbar pull-left">
+                        <div ng-if="user" class="gravatar gravatar-navbar pull-left">
                             <img src="https://s.gravatar.com/avatar/{{user.avatar}}?s=25" />
                         </div>
-                         {{user.name}}
+                        {{user ? user.name : 'Login'}}
                     </a>
-                    <a show-in-mobile href="#/profile" data-toggle="collapse" data-target="#itens-menu">{{user.name}}</a>
+                    <a show-in-mobile href="#/profile" data-toggle="collapse" data-target="#itens-menu">{{user ? user.name : 'Login'}}</a>
                 </li>
                 <li><a href="#/logout">Sair</a></li>
             </ul>

@@ -15,7 +15,7 @@ var app = angular.module('app', [
 }]);
 
 app.run(['$rootScope', '$location', '$route', 'AuthCheck', 'Owner', function ($rootScope, $location, $route, AuthCheck, Owner) {
-
+    
     $rootScope.$route = $route;
 
     if (!$rootScope.user || !$rootScope.user.id) {
@@ -26,15 +26,15 @@ app.run(['$rootScope', '$location', '$route', 'AuthCheck', 'Owner', function ($r
                 avatar: data.gravatar
             };
         }, function () {
-            $location.path('/login');
+            $rootScope.user = undefined;
         });
     }
 
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        var restrictedPage = $location.path() !== '/login';
+        var restrictedPage = ['/login', '/map'].indexOf($location.path()) == -1;
         if (restrictedPage) {
             AuthCheck.get({}, function (success) { }, function (fail) {
-                $rootScope.user = {};
+                $rootScope.user = undefined;
                 event.preventDefault();
                 $location.path('/login');
             });
