@@ -46,7 +46,7 @@
                     </a>
                     <a show-in-mobile href="#/profile" data-toggle="collapse" data-target="#itens-menu">{{user ? user.name : 'Login'}}</a>
                 </li>
-                <li><a href="#/logout">Sair</a></li>
+                <li ng-if="user"><a href="#/logout">Sair</a></li>
             </ul>
         </div>
     </div>
